@@ -24,7 +24,7 @@ steps:
   displayName: "Stopping App Service Slot"
   inputs:
     azureSubscription: "diocamStopSlot"
-    Action: "Stop Azure App Service"
+    Action: "Delete Slot"
     WebAppName: 'diocamStopSlot'
     SpecifySlotOrASE: true
     Slot: 'mytest'
