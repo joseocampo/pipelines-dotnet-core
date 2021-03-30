@@ -1,11 +1,3 @@
-# ASP.NET Core
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'MAIC - TEK Experts CR - v-juasol Group#1 (90d7af21-b3a1-4bf8-a149-8e1fcc47e337)'
-    appType: 'webApp'
-    WebAppName: 'diocamStopSlot'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
