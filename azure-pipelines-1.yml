@@ -13,18 +13,18 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- task: AzureAppServiceManage@0
-  displayName: "Stopping App Service (Production)"
-  inputs:
-    azureSubscription: "diocamStopSlot"
-    Action: "Stop Azure App Service"
-    WebAppName: 'diocamStopSlot'
+#- task: AzureAppServiceManage@0
+# displayName: "Stopping App Service (Production)"
+#  inputs:
+#    azureSubscription: "diocamStopSlot"
+#    Action: "Stop Azure App Service"
+#    WebAppName: 'diocamStopSlot'
 
 - task: AzureAppServiceManage@0
   displayName: "Stopping App Service Slot"
   inputs:
     azureSubscription: "diocamStopSlot"
     Action: "Stop Azure App Service"
-    WebAppName: 'diocamstopslot-mytest'
+    WebAppName: 'diocamStopSlot'
     SpecifySlotOrASE: true
     Slot: 'deploy'
