@@ -13,7 +13,18 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
-  condition: 
-  - task: 'PublishBuildArtifacts@1'
+- task: AzureAppServiceManage@0
+  displayName: "Stopping App Service (Production)"
+  inputs:
+    azureSubscription: "AzureDevOpsConnection"
+    Action: "Stop Azure App Service"
+    WebAppName: 'diocamStopSlot'
+
+- task: AzureAppServiceManage@0
+  displayName: "Stopping App Service Slot"
+  inputs:
+    azureSubscription: "AzureDevOpsConnection"
+    Action: "Stop Azure App Service"
+    WebAppName: 'diocamStopSlot'
+    SpecifySlotOrASE: true
+    Slot: 'deploy'
