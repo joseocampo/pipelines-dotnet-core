@@ -20,11 +20,18 @@ steps:
     Action: "Stop Azure App Service"
     WebAppName: 'diocamStopSlot'
 
-- task: AzureAppServiceManage@0
-  displayName: "Stopping App Service Slot"
+- task: PowerShell@2
   inputs:
-    azureSubscription: "diocamStopSlot"
-    Action: "Stop Azure App Service"
-    WebAppName: 'diocamstopslot/mytest'
-    SpecifySlotOrASE: true
-    #Slot: 'mytest'
+    targetType: 'filePath'
+    filePath: $(System.DefaultWorkingDirectory)\test1.ps1
+  displayName: 'Print Hello World'
+
+#- task: AzureAppServiceManage@0
+ # displayName: "Stopping App Service Slot"
+ # inputs:
+ #   azureSubscription: "diocamStopSlot"
+  #  Action: "Stop Azure App Service"
+  #  WebAppName: 'diocamstopslot/mytest'
+  #  SpecifySlotOrASE: true
+  #  Slot: 'mytest'
+    
